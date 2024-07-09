@@ -5,41 +5,13 @@
  
 <section class="der-lab-trabajadores  my-3 col col-md-10 col-lg-10 col-12 mx-auto">
     <div class="row w-100 col-12 my-3">
-        <!--
-        <div class="col-12 py-1">
-            <div class="row p-0 m-0"> 
-                <div class="row form-group col-12 p-0 " id="step1"> 
-                    <div class=" col-12 p-0" > 
-                        <label for="cclEstados " class="d-block dorada my-2"> <h4 class="dorada"> Selecciona un estado: </h4></label>
-                        <select name="cclEstados" id="_cclEstados" class="col-12  form-select mb-3">
-                            <option> Selecciona un estado </option>
-                            @foreach ($estados as $estado)
-                            <option value="{{$estado->clave}}">{{$estado->nombre}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="bd-example datosCCL ocultar" id="_datosCCL">
-                <div class="list-group" id="result-list">
-                    <h5 class="my-2">Deberás acudir al Centro de Conciliación y Registro Laboral.</h5>
-                    <div class="w-100 justify-content-between cclContent">
-                        <p class="mb-1 direccionCCL" id="_direccionCCL"> And some muted small print.</p>
-                        <p class="mb-1 ambitoCCL" id="_ambitoCCL"> And some muted small print.</p>
-                        <p class="mb-1 contactoCCL" id="_contactoCCL"> And some muted small print. </p>
-                        <a class="mb-1 contactoCCL vermapa" id="_contactoCCL"> And some muted small print. </a>                                                             
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
         <div class="list-group" id="result-list">
         </div>
         <div class="w-100 vozlaboral-mapa_map-filter-big">
                 <form class ="w-100" action="#">
                         <label for="filter_type-presentados">
                             <div class="big-numbers">
-                                <div><img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-presentados-icon.svg" alt=""></div>
+                                <div><img decoding="async" class="w-100" src="{{ asset('img/casos-presentados-icon.svg') }}" alt=""></div>
                                 <div>
                                     <span id="valPresentados">{{ count($cclsUbicaciones) }}</span>
                                     <h5>Casos presentados</h5>
@@ -54,7 +26,7 @@
                         </label>
                         <label for="filter_type-activos">
                             <div class="big-numbers">
-                                <div><img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-activos-icon.svg" alt=""></div>
+                                <div><img decoding="async"   class="w-100" src="{{ asset('img/casos-activos-icon.svg') }}"  alt=""></div>
                                 <div>
                                     <span id="valActivos">{{ $cclsUbicaciones->where("estatus", "Activo")->count() }}</span>
                                     <h5>Activos</h5>
@@ -67,7 +39,7 @@
                         </label>
                         <label for="filter_type-cerrados">
                             <div class="big-numbers">
-                                <div><img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-cerrados-icon.svg" alt=""></div>
+                                <div><img decoding="async" class="w-100" src="{{ asset('img/casos-cerrados-icon.svg') }}" alt=""></div>
                                 <div>
                                     <span id="valCerrados">{{ $cclsUbicaciones->where("estatus", "Cerrado")->count() }}</span>
                                     <h5>Cerrados</h5>
@@ -80,7 +52,7 @@
                         </label>
                         <label for="filter_type-paneles">
                             <div class="big-numbers">
-                                <div><img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-paneles-icon.svg" alt=""></div>
+                                <div><img decoding="async" class="w-100" src="{{ asset('img/casos-paneles-icon.svg') }}"  alt=""></div>
                                 <div>
                                     <span id="valPaneles">{{ $cclsUbicaciones->where("estatus", "Panel")->count() }}</span>
                                     <h5>Paneles</h5>
@@ -93,7 +65,7 @@
                         </label>
                         <label for="filter_type-fecha">
                             <div class="big-numbers fechas">
-                                <div><img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/icon-date.svg" alt=""></div>
+                                <div><img decoding="async" class="w-100" src="{{ asset('img/icon-date.svg') }}" alt=""></div>
                                 <div>
                                     <h5>Por Fecha</h5>
                                 </div>
@@ -115,7 +87,7 @@
             <div class="col-12 mapOpenStreetMap p-0 mt-1 justify-content-center w-100 sticky-top"  >                    
                 <!-- Mapa openstreetmap-->                                                              
                 <div class="form-group col-12">
-                    <div id="map-container" class="w-100" style="height:650px; border:1px solid #ccc">
+                    <div id="map-container" class="w-100" style="height:500px; border:1px solid #ccc">
                     </div>                                                                                                                                                                                  
                 </div>
                 <!-- Fin del openstreetmap -->
@@ -129,21 +101,33 @@
 <div class="modal fade" id="markerModal" tabindex="-1" role="dialog" aria-labelledby="markerModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="markerModalLabel">Título</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="modalContent">
-        
-      </div>
-      <!--
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    -->
+        <div class="modal-header p-0" id="modal-header">
+            <!-- <h5 class="modal-title" id="markerModalLabel">Título</h5>-->            
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" id="modalContent">
+            <!-- Se agrega el contenido generado por laravel-->
+
+        </div>
+        <div class="modal-footer content info_icons">
+            <div class="row icons d-flex justify-content-start w-100">
+                <div class="col-md-6">
+                    <img class="navbar-brand-full app-header-logo" src="{{ asset('img/logomapa.svg') }}" width="190" alt="mapa">
+                </div>
+                
+                <div class="col-md-1 px-0" style="margin-left: auto;">
+                    <img src="{{ asset('img/mail.png') }}" class="img"/>
+                </div>
+                <div class="col-md-1 px-0">
+                    <img src="{{ asset('img/share.png') }}" class="img "/>
+                </div>
+                <div class="col-md-1 px-0">
+                    <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
 </div>
@@ -357,6 +341,12 @@
                 //console.log(ccl.fecha_estatus + "  "+ finicio +" "+ ffinal+ " "+ (ccl.fecha_estatus >=  finicio) + " "+(ccl.fecha_estatus <=  ffinal));
                 if (ccl.fecha_estatus >=  finicio &  ccl.fecha_estatus <=  ffinal){                    
                     if( ccl.estatus == filtro ){                                                
+                         //formateador de fechas
+                        const fechaOriginal = new Date(ccl.fecha_estatus);
+                        const opciones = { day: 'numeric', month: 'long', year: 'numeric' };
+                        const formateador = new Intl.DateTimeFormat('es-ES', opciones);
+                        const fechaFormateada = formateador.format(fechaOriginal);
+                        //
                         const marker = L.marker([ccl.latitud, ccl.longitud], { icon: iconoPin }).addTo(map);
                         markers.push(marker);           
                         // Event listener for marker click
@@ -364,16 +354,56 @@
                             // Get the modal and content elements
                             const modal = new bootstrap.Modal(document.getElementById('markerModal'));
                             const modalContent = document.getElementById('modalContent');
-
+                            const modalHeader = document.getElementById('modal-header');
+                            
                             // Set the modal content using the ccl data
-                            modalContent.innerHTML = `
-                                <p><strong>Empresa:</strong> ${ccl.empresa}</p>
-                                <p><strong>Municipio:</strong> ${ccl.municipio}</p>
-                                <p><strong>Estado:</strong> ${ccl.estado}</p>
-                                <p><strong>Estatus:</strong> ${ccl.estatus}</p>
-                                <p><strong>Sector:</strong> ${ccl.sector}</p>
-                                <p><strong>Motivos:</strong> ${ccl.motivos_ficha}</p>
-                                <p><strong>Texto:</strong> ${ccl.texto_ficha}</p>
+                            modalHeader.innerHTML = `  
+                                <div class="content title">
+                                    
+                                    <i class="fa-solid fa-industry" style="color: #347c6b;"></i>
+                                    
+                                    <h2>${ccl.empresa}</h2>
+                                    <h4>${ccl.municipio}, ${ccl.estado} / ${ccl.estado} ${ccl.fecha_estatus} </h4>
+                                </div>
+                            `;
+                            modalContent.innerHTML = `                            
+                                
+                                <div class="content info">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Nombre de la Empresa: ${ccl.empresa} </p>
+                                            <p>Ciudad o Municipio: ${ccl.minicipio} </p>
+                                            <p>Estado: ${ccl.estado}</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <P>Fecha: ${ccl.fecha_estatus} </P>
+                                            <P>Estatus: ${ccl.estatus} </P>
+                                            <p>Sector: ${ccl.sector}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content info">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h4 style="font-weight:bold">Motivo de activación</h4>
+                                            <p>${ccl.motivos_ficha} </p>
+                                            <h4 style="font-weight:bold">Resultados</h4>
+                                            <p>${ccl.resultados_ficha} </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h4 style="font-weight:bold">Resumen</h4>
+                                            <p>${ccl.texto_ficha}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content info">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4 style="font-weight:bold">Enlace de Solicitud</h4>
+                                            <a href="${ccl.link_solicitud_ustr}">${ccl.link_solicitud_ustr}</a>
+                                        </div>
+                                    </div>
+                                </div>
                             `;
                             modal.show();
                         });                                 
@@ -449,9 +479,18 @@
                     markers.push(marker);                                        
             @endforeach 
             */
+            
+
             cclsMarkers.forEach(ccl => {
                 //console.log(ccl.fecha_estatus +" "+ finicio + (ccl.fecha_estatus >=  finicio));
                 if( ccl.fecha_estatus >=  finicio &  ccl.fecha_estatus <=  ffinal ){
+                    //formateador de fechas
+                    const fechaOriginal = new Date(ccl.fecha_estatus);
+                    const opciones = { day: 'numeric', month: 'long', year: 'numeric' };
+                    const formateador = new Intl.DateTimeFormat('es-ES', opciones);
+                    const fechaFormateada = formateador.format(fechaOriginal);
+                    //
+
                     const marker = L.marker([ccl.latitud, ccl.longitud], { icon: iconoPin }).addTo(map);
                     markers.push(marker);           
                     // Event listener for marker click
@@ -459,16 +498,54 @@
                         // Get the modal and content elements
                         const modal = new bootstrap.Modal(document.getElementById('markerModal'));
                         const modalContent = document.getElementById('modalContent');
-
+                        const modalHeader = document.getElementById('modal-header');
+                            
+                        // Set the modal content using the ccl data
+                        modalHeader.innerHTML = `  
+                            <div class="content title">
+                                <i class="fa-solid fa-industry" style="color: #347c6b;"></i>                                
+                                <h2>${ccl.empresa}</h2>
+                                <h4>${ccl.municipio}, ${ccl.estado} / ${ccl.estado} ${fechaFormateada} </h4>
+                            </div>
+                        `;
                         // Set the modal content using the ccl data
                         modalContent.innerHTML = `
-                            <p><strong>Empresa:</strong> ${ccl.empresa}</p>
-                            <p><strong>Municipio:</strong> ${ccl.municipio}</p>
-                            <p><strong>Estado:</strong> ${ccl.estado}</p>
-                            <p><strong>Estatus:</strong> ${ccl.estatus}</p>
-                            <p><strong>Sector:</strong> ${ccl.sector}</p>
-                            <p><strong>Motivos:</strong> ${ccl.motivos_ficha}</p>
-                            <p><strong>Texto:</strong> ${ccl.texto_ficha}</p>
+                            <div class="content info datoscabecera">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p> <b> Nombre de la Empresa: </b> ${ccl.empresa} </p>
+                                        <p> <b>Ciudad o Municipio:</b> ${ccl.minicipio} </p>
+                                        <p> <b>Estado:</b> ${ccl.estado}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <P> <b>Fecha:</b> ${ccl.fecha_estatus} </P>
+                                        <P> <b>Estatus:</b> ${ccl.estatus} </P>
+                                        <p> <b>Sector:</b>  ${ccl.sector}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content info datoscuerpo">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4 style="font-weight:bold">Motivo de activación</h4>
+                                        <p>${ccl.motivos_ficha} </p>
+                                        <h4 style="font-weight:bold">Resultados</h4>
+                                        <p>${ccl.resultados_ficha} </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4 style="font-weight:bold">Resumen</h4>
+                                        <p>${ccl.texto_ficha}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content info">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4 style="font-weight:bold">Enlace de Solicitud</h4>
+                                        <a href="${ccl.link_solicitud_ustr}">${ccl.link_solicitud_ustr}</a>
+                                    </div>
+                                </div>
+                            </div>
                         `;
                         modal.show();
                     });                 

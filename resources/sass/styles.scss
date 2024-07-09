@@ -760,40 +760,6 @@ Viaje compartido publico de ida
     font-size: 8px;
     font-weight: bolder;
 }
-.destinoRegresoIcon{
-    background-image: url('../../public/img/location-pin.png') !important;
-    background-repeat:no-repeat;
-    background-position: 0 2px;
-    background-size: contain;
-    width: 40px;
-    height: 45px;
-}
-
-.destinoRegresoIconMin {
-    background-image: url(/images/location-pin.png?a464bbf1631e6ca210b36e3898b1cde7) !important;
-    background-repeat: no-repeat;
-    background-position: 0 0px;
-    background-size: contain;
-    width: 25px;
-    height: 25px;
-}
-.origenRegresoIcon{
-    background-image: url('../../public/img/justice-icon.png') !important;
-    background-repeat:no-repeat;
-    background-position: 0 0;
-    background-size: contain;
-    width: 35px;
-    height: 44px;
-}
-
-.origenRegresoIconMin {
-    background-image: url(/images/justice-icon.png?6ad038c69a52c804448eae7c0e240276) !important;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: contain;
-    width: 20px;
-    height: 25px;
-  }
 
 .dropdown-list .dropdown-item {
     font-size: 10px;
@@ -1279,7 +1245,7 @@ Modal
     display: flex;
     gap: 10px;
     align-items: center;
-    border-right: 1px solid #397C6A;
+    border-right: 1px solid #007E6B;
     min-height: 100px;
     height: 100px;
 }
@@ -1297,7 +1263,7 @@ Modal
     display: block;
     font-size: 60px;
     font-weight: bold;
-    color: #397C6A;
+    color: #007E6B;
     line-height: 1;
 }
 
@@ -1357,4 +1323,88 @@ Modal
 }
 .vozlaboral-mapa_map-filter-big form > label {
     flex: 0 0 calc(20% - 20px);
+}
+
+/*
+estilos fichas
+*/
+.modal-dialog{
+    color:#000;
+}
+.modal-content .modal-body, .modal-content .info_icons{
+    --dot-bg: #ffffff;
+    --dot-color: rgba(183, 183, 183,0.4);
+    --dot-size: 3px;
+    --dot-space: 20px;
+    background: linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), var(--dot-color);
+}
+
+.modal-content .modal-body .datoscabecera{
+    border-bottom: 2px solid #000;
+}
+.modal-content .modal-body .datoscuerpo{
+    padding-top: 1em;
+    overflow: auto;
+    max-height: 300px;
+}
+
+.modal-content .modal-header {
+    padding:0;
+    display: block;
+    h2{
+        font-size: 22px;
+        line-height: 1.2;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;        
+    }
+    h4{
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+.modal-dialog .title{
+    background-color: #007E6B;
+    color: white;
+    padding: 12px;
+}
+
+
+.modal-dialog .info_icons{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.modal-dialog .icons{
+    display: flex;
+}
+.modal-dialog .icon{
+    width: 50px;
+    height: 50px;
+}
+
+.modal-dialog .modal-footer .icons .img{
+    width: 50px;
+    height: 50px;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        width: 650px;
+        max-width: 700px;
+        margin: 1.75rem auto;
+    }
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        width: 65   0px;
+        max-width: 700px;
+        margin: 1.75rem auto;
+    }
 }

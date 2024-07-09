@@ -19,6 +19,7 @@ mix.js('resources/js/app.js', 'public/js')
     mix.js('resources/js/app.js', 'public/js');
     mix.styles(['resources/js/app.js'], 'public/css/app.css').version();
     mix.sass('resources/sass/styles.scss', 'public/css');
+    mix.options({ processCssUrls: false });
     
     mix.styles([
         'public/css/social-icons.css',
