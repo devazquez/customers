@@ -1,0 +1,12 @@
+require('./bootstrap');
+require('easy-autocomplete/dist/jquery.easy-autocomplete');
+
+/*
+Echo.private('notificaciones')
+    .listen('ViajeCompartidoEvent', (e) =>{
+        const notDiv = document.getElementById('contentNotificaciones');
+        notDiv.innerText = e.type + " hola ";
+        console.log(e.type + " hola ");        
+});
+*/
+
