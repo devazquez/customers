@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::get('/localiza-tu-ccl-info', [MapaController::class, 'localizaTuCCLInfo'])->name('localizatucclinfopublic');
 Route::get('/localiza-tu-ccl', [MapaController::class, 'localizaTuCCL'])->name('localizatucclpublic');
 Route::get('/tdr-mapa', [MapaController::class, 'tdrMapa'])->name('tdr-mapa');
+Route::get('/generar-pdf/{id?}', [MapaController::class, 'generarPDF'])->name('generar-pdf');
 
 Route::get('registrar-pasajero/{dependencia?}',  [App\Http\Controllers\Auth\RegisterUserController::class, 'showRegistrationPasajeroForm'])->name('registrarPasajero');
 Route::post('registrarPasajero', [App\Http\Controllers\Auth\RegisterUserController::class, 'registerPasajero'])->name('registrarPasajeroPost');

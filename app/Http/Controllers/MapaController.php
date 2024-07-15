@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class MapaController extends Controller
 {
@@ -81,7 +83,7 @@ class MapaController extends Controller
      * metodo que muestra el CCL dado  el ambito Federal o Local
      */
     public function   tdrMapa(){       
-                        
+        
         $cclsUbicaciones = \DB::table('general as t1')
             ->select('t1.id', 't1.empresa', 't1.latitud', 't1.longitud', 't1.municipio', 't1.estado','t1.fecha_estatus', 't1.estatus', 't1.sector', 't1.motivos_ficha', 't1.resultados_ficha', 't1.texto_ficha', 't1.link_solicitud_ustr', 't1.link_resultados_ustr')
             ->get();              
@@ -126,6 +128,69 @@ class MapaController extends Controller
 
         return view('mapa.tdr-mapa',  compact("cclsUbicaciones", "sector_ccl", "sectores", "subsectores","ramas", "subramas", "estados"));
     }
+
+    //Generar el PDF de una tarjeta
+    public function generarPDF($id){
+        $baseUrl = url('/');
+        //dd($baseUrl."/img/logomapa.svg");
+        Carbon::setLocale('es');
+        
+        $ccl = \DB::table('general as t1')
+            ->select('t1.id', 't1.empresa', 't1.latitud', 't1.longitud', 't1.municipio', 't1.estado','t1.fecha_estatus', 't1.estatus', 't1.sector', 't1.motivos_ficha', 't1.resultados_ficha', 't1.texto_ficha', 't1.link_solicitud_ustr', 't1.link_resultados_ustr')
+            ->where("t1.id", '=', $id)
+            ->get();   
+        $ccl = $ccl->toArray();
+        $ccl = $ccl[0];
+        //dd($ccl);
+        $fecha = Carbon::parse($ccl->fecha_estatus);
+        //dd($fecha . " " .$fecha->month );
+        $meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+        $mes = $meses[$fecha->month - 1]; // Los meses en Carbon empiezan en 0
+        $fechaFormateada = " $fecha->day  de  $mes del $fecha->year" ;
+
+        $data = [
+            'id'  => $ccl->id,
+            'empresa' => $ccl->empresa,
+            'latitud' => $ccl->latitud,
+            'longitud' => $ccl->longitud,
+            'municipio' => $ccl->municipio,
+            'estado'   => $ccl->estado,
+            'fecha_estatus' => $fechaFormateada,
+            'estatus' => $ccl->estatus,
+            'sector' => $ccl->sector,
+            'motivos_ficha' => $ccl->motivos_ficha,
+            'resultados_ficha' => $ccl->resultados_ficha,
+            'texto_ficha' => $ccl->texto_ficha,
+            'link_solicitud_ustr' => $ccl->link_solicitud_ustr,
+            'link_resultados_ustr' => $ccl->link_resultados_ustr
+        ];
+
+        //$pdf->setBasePath(public_path()); // Establecer la ruta base a la carpeta "public"
+
+        // Si la imagen está en la carpeta public/img:
+        //$pdf->setBasePath(public_path('img')); // Establecer la ruta base a la carpeta "img" (dentro de public)
+        //dd(public_path());
+        $path = public_path('img/logomapa2.png');
+        //dd($path);
+
+        $pdf = Pdf::loadView('mapa.cardPdf', compact('data','path'))->setOptions(['defaultFont' => 'sans-serif',
+            'letter' => 'landscape',
+            'margin-top' => '10mm',
+            'margin-right' => '10mm',
+            'margin-bottom' => '10mm',
+            'margin-left' => '10mm',
+            'isPhpEnabled' => true
+        ]);    
+        
+        return $pdf->download('descargar.pdf');
+        return view('mapa.cardPdf', compact('data'));
+        //$pdf = PDF::loadView('mapa.cardPdf', compact('data')); // 'tu_vista_blade' es el nombre de tu vista
+        //return $pdf->download('documento.pdf'); // Descargar el PDF
+        return $pdf= PDF::loadView('mapa.cardPdf', compact('data'));
+        // O puedes usar: return $pdf->stream('nombre_del_archivo.pdf'); para mostrar el PDF en el navegador
+    }
+
+
 
     /*
      * Error Page Routs

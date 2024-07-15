@@ -459,7 +459,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <p>Nombre de la Empresa: ${ccl.empresa} </p>
-                                            <p>Ciudad o Municipio: ${ccl.minicipio} </p>
+                                            <p>Ciudad o Municipio: ${ccl.municipio} </p>
                                             <p>Estado: ${ccl.estado}</p>
                                         </div>
                                         <div class="col-md-6">
@@ -601,7 +601,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p> <b> Nombre de la Empresa: </b> ${ccl.empresa} </p>
-                                        <p> <b>Ciudad o Municipio:</b> ${ccl.minicipio} </p>
+                                        <p> <b>Ciudad o Municipio:</b> ${ccl.municipio} </p>
                                         <p> <b>Estado:</b> ${ccl.estado}</p>
                                     </div>
                                     <div class="col-md-6">
