@@ -204,8 +204,8 @@
                     <img class="navbar-brand-full app-header-logo" src="{{ asset('img/logomapa.svg') }}" width="190" alt="mapa">
                 </div>
                 
-                <div class="col-md-1 px-0" style="margin-left: auto;">
-                    <img src="{{ asset('img/mail.png') }}" class="img"/>
+                <div id ="mailtobtn" class="col-md-1 px-0" style="margin-left: auto;">
+                    
                 </div>
                 <div class="col-md-1 px-0">
                     <img src="{{ asset('img/share.png') }}" class="img "/>
@@ -443,6 +443,7 @@
                             const modalContent = document.getElementById('modalContent');
                             const modalHeader = document.getElementById('modal-header');
                             const pdfbtn = document.getElementById('pdfbtn');
+                            const mailtobtn = document.getElementById('mailtobtn');   
                             
                             // Set the modal content using the ccl data
                             modalHeader.innerHTML = `  
@@ -497,7 +498,10 @@
                                     <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
                                 </a>
                             `;
-
+                            mailtobtn.innerHTML =`
+                            <a href="mailto:?subject=Comporta el enlace a descargar&body=Enlace  de descarga:%0Ahttp://52.179.132.1/generar-pdf/${ccl.id}">
+                                <img src="{{ asset('img/mail.png') }}" class="img"/> 
+                            </a>`;
                             modal.show();
                         });                                 
                     }                       
@@ -592,7 +596,9 @@
                         const modal = new bootstrap.Modal(document.getElementById('markerModal'));
                         const modalContent = document.getElementById('modalContent');
                         const modalHeader = document.getElementById('modal-header');
-                        const pdfbtn = document.getElementById('pdfbtn');    
+                        const pdfbtn = document.getElementById('pdfbtn');   
+                        const mailtobtn = document.getElementById('mailtobtn');   
+                        
                         // Set the modal content using the ccl data
                         modalHeader.innerHTML = `  
                             <div class="content title">
@@ -645,6 +651,10 @@
                                     <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
                                 </a>
                             `;
+                        mailtobtn.innerHTML =`
+                            <a href="mailto:?subject=Comporta el enlace a descargar&body=Enlace  de descarga:%0Ahttp://52.179.132.1/generar-pdf/${ccl.id}">
+                                <img src="{{ asset('img/mail.png') }}" class="img"/> 
+                            </a>`;
                         modal.show();
                     });                 
                 } 
