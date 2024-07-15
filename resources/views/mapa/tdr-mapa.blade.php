@@ -499,7 +499,7 @@
                                 </a>
                             `;
                             mailtobtn.innerHTML =`
-                            <a href="mailto:?subject=Compartir enlace de descargar&body=Enlace  de descarga:%0Ahttp://52.179.132.1/generar-pdf/${ccl.id}">
+                            <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttp://52.179.132.1/generar-pdf/${ccl.id}">
                                 <img src="{{ asset('img/mail.png') }}" class="img"/> 
                             </a>`;
                             modal.show();
@@ -652,7 +652,7 @@
                                 </a>
                             `;
                         mailtobtn.innerHTML =`
-                            <a href="mailto:?subject=Compartir enlace de descargar&body=Enlace  de descarga:%0Ahttp://52.179.132.1/generar-pdf/${ccl.id}">
+                            <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttp://52.179.132.1/generar-pdf/${ccl.id}">
                                 <img src="{{ asset('img/mail.png') }}" class="img"/> 
                             </a>`;
                         modal.show();
