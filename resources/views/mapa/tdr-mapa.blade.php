@@ -3,10 +3,11 @@
 @section('content')
 <span class="uisheet screen-darken"></span>
  
-<section class="der-lab-trabajadores  my-3 col col-md-10 col-lg-10 col-12 mx-auto">
-    <div class="row w-100 col-12 my-3">
+<section class="der-lab-trabajadores  w-100 p-0 my-3 col col-md-10 col-lg-10 col-12 mx-auto">
+    <div class="row w-100 p-0 col-12 my-3">
         <div class="list-group" id="result-list">
         </div>
+        <!--
         <div class="w-100 vozlaboral-mapa_map-filter-big">
                 <form class ="w-100" action="#">
                         <label for="filter_type-presentados">
@@ -83,7 +84,93 @@
                         </label>
                     </form>
             </div>
-        <div class="col-12 p-0">                       
+        <div class="col-12 p-0">      
+        -->
+        <div class="w-100 vozlaboral-mapa_map-filter-big">
+            <form class="w-100 filter-grid" action="#">
+                <label for="filter_type-presentados" class="filter-label">
+                    <div class="big-numbers">
+                        <div class="filter-img">
+                            <img decoding="async"  class="w-100" src="{{ asset('img/casos-presentados-icon.svg') }}" alt="">
+                        </div>
+                        <div class="filter-texto">
+                            <span id="valPresentados">{{ count($cclsUbicaciones) }}</span>
+                            <h5>Casos presentados</h5>
+                        </div>
+                    </div>
+                    <div class="radio-botones">
+                        <input id="filter_type-presentados" class="form-check-input"  type="radio" name="filtro_map" value="presentados" >
+                        <span></span>
+                    </div>
+                </label>
+                <label for="filter_type-activos" class="filter-label">
+                    <div class="big-numbers">
+                        <div class="filter-img">
+                            <img decoding="async"  class="w-100" src="{{ asset('img/casos-activos-icon.svg') }}" alt="">
+                        </div>
+                        <div class="filter-texto">
+                            <span id="valActivos">{{ $cclsUbicaciones->where("estatus", "Activo")->count() }}</span>
+                            <h5>Activos</h5>                            
+                        </div>
+                    </div>
+                    <div class="radio-botones">
+                        <input id="filter_type-activos" class="form-check-input"  type="radio" name="filtro_map" value="Activo" >
+                        <span class=""></span>
+                    </div>
+                </label>
+                <label for="filter_type-cerrados" class="filter-label">
+                    <div class="big-numbers">
+                        <div class="filter-img">    
+                            <img decoding="async"  class="w-100" src="{{ asset('img/casos-cerrados-icon.svg') }}" alt="">
+                        </div>
+                        <div class="filter-texto">
+                            <span id="valCerrados">{{ $cclsUbicaciones->where("estatus", "Cerrado")->count() }}</span>
+                            <h5>Cerrados</h5>                            
+                        </div>
+                    </div>
+                    <div class="radio-botones">
+                        <input id="filter_type-cerrados" class="form-check-input"  type="radio" name="filtro_map" value="Cerrado" >
+                        <span class=""></span>
+                    </div>
+                </label>
+                <label for="filter_type-paneles" class="filter-label">
+                    <div class="big-numbers">
+                        <div class="filter-img">
+                            <img decoding="async" class="w-100" src="{{ asset('img/casos-paneles-icon.svg') }}" alt="">
+                        </div>
+                        <div class="filter-texto">
+                            <span id="valPaneles">{{ $cclsUbicaciones->where("estatus", "Panel")->count() }}</span>
+                            <h5>Paneles</h5>                            
+                        </div>
+                    </div>
+                    <div class="radio-botones">
+                        <input id="filter_type-paneles" class="form-check-input"  type="radio" name="filtro_map" value="Panel" >
+                        <span class=""></span>
+                    </div>
+                </label>
+               
+                <label for="filter_type-fecha" class="filter-label labelFechas">
+                    <div class="big-numbers fechas">
+                        <div class="filter-img">
+                            <img decoding="async"  class="w-100" src="{{ asset('img/icon-date.svg') }}" alt="">
+                        </div>
+                        <div class="filter-texto">
+                            <h5>Por Fecha</h5>                            
+                        </div>
+                    </div>
+                    <div class="divsFechas">
+                        <div> 
+                            <span >  De: </span>
+                            <input  type="date" id="filter_type-fecha" name="date" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}"  max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus }}"> 
+                        </div>
+                        <div class="mt-2" > 
+                            <span class="pl-2 ml-1"> a: </span>
+                            <input  type="date"  id="filter_type-fecha2" name="date2" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}" max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}">                           
+                        </div>
+                    </div>
+                </label>                                
+            </form>
+        </div>
             <div class="col-12 mapOpenStreetMap p-0 mt-1 justify-content-center w-100 sticky-top"  >                    
                 <!-- Mapa openstreetmap-->                                                              
                 <div class="form-group col-12">

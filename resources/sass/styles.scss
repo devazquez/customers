@@ -597,7 +597,8 @@ Estilos sobre misViajesIda
 */
 
 .appPublic .main-content {
-    padding-left: 30px;
+    //padding-left: 30px;
+    padding-left: 5px;
     padding-right: 5px;
     padding-top: 70px;
 }
@@ -1238,7 +1239,8 @@ Modal
     gap: 20px;
 }
 .vozlaboral-mapa_map-filter-big form > label {
-    flex: 0 0 calc(20% - 20px);
+    //flex: 0 0 calc(10% - 10px);
+    flex: 1 0 calc(10% - 10px);
 }
 
 .vozlaboral-mapa_map-filter-big form > label .big-numbers {
@@ -1248,6 +1250,9 @@ Modal
     border-right: 1px solid #007E6B;
     min-height: 100px;
     height: 100px;
+
+    flex-direction: row; /* Dirección horizontal por defecto */
+    gap: 1rem; /* Espacio entre los divs (opcional) */
 }
 
 .big-numbers img {
@@ -1255,13 +1260,25 @@ Modal
     border-style: none;
 }
 
+.vozlaboral-mapa_map-filter-big form > label .big-numbers  .filter-texto {
+    span{
+        margin: 0 auto;
+        text-align: center;
+    }
+    h5{
+        text-align: center;
+    }
+
+}
+
 .vozlaboral-mapa_map-filter-big form > label .big-numbers > div {
-    flex: 0 0 calc(50% - 10px);
+    //flex: 0 0 calc(50% - 10px);
+    flex: 0 0 calc(40% - 10px);
 }
 
 .vozlaboral-mapa_map-filter-big form > label .big-numbers > div:last-child > span {
     display: block;
-    font-size: 60px;
+    font-size: 4rem;
     font-weight: bold;
     color: #007E6B;
     line-height: 1;
@@ -1270,7 +1287,7 @@ Modal
 
 .vozlaboral-mapa_map-filter-big form > label .big-numbers > div:last-child > h5 {
     font-weight: bold;
-    font-size: 1em;
+    font-size: .7em;
 }
 .vozlaboral-mapa_map-filter-big form > label input[type="radio"] {
     width: 20px;
@@ -1287,8 +1304,11 @@ Modal
     width: 20px;
     height: 20px;    
     text-align: center;
-    margin:0 auto;
+    margin:10px auto;
     display: block;
+}
+.divsFechas{
+    margin:10px auto;
 }
 
 
@@ -1321,9 +1341,7 @@ Modal
     margin-left: auto;
     margin-right: auto;
 }
-.vozlaboral-mapa_map-filter-big form > label {
-    flex: 0 0 calc(20% - 20px);
-}
+
 
 /*
 estilos fichas
@@ -1407,4 +1425,112 @@ estilos fichas
         max-width: 700px;
         margin: 1.75rem auto;
     }
+}
+
+
+.filter-grid {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 1rem; /* Add space between items */
+}
+
+.filter-label {
+    display: flex; /* Use Flexbox within labels */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center horizontally */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .filter-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .filter-grid {
+        grid-template-columns: 1fr; /* Single column on phones */
+    }
+}
+
+/* Media query para pantallas pequeñas (ajusta el valor según tus necesidades) */
+
+/* Media query para pantallas medianas (tablets y algunos portátiles) */
+@media (min-width: 768px) and (max-width: 1023px) { 
+
+    .vozlaboral-mapa_map-filter-big form > label .big-numbers {
+        flex-direction: column; /* Apilar elementos verticalmente en pantallas medianas */
+        align-items: flex-start; /* Alinear elementos a la izquierda */
+    }
+
+    .vozlaboral-mapa_map-filter-big form > label .big-numbers img {
+        width: 45% !important; /* Imagen ocupa todo el ancho disponible */
+        margin-bottom: 0.5rem; /* Espacio inferior a la imagen */
+    }
+
+    .vozlaboral-mapa_map-filter-big form > label .big-numbers > div:last-child > span {
+        font-size: 1.3rem; /* Ajustar tamaño de fuente para pantallas medianas */
+    }
+    .radio-botones input[type="radio"]{
+        margin:40px auto;        
+    }
+    .divsFechas{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .vozlaboral-mapa_map-filter-big form > .filter-label{
+        margin-left: -20px;
+    }
+    .vozlaboral-mapa_map-filter-big form > .filter-label:first-child{
+        margin-left: -10px;
+    }
+    .vozlaboral-mapa_map-filter-big form > .filter-label.labelFechas{
+        width: 35%;
+    }
+    .vozlaboral-mapa_map-filter-big form > .filter-label .divsFechas{
+        margin:0;
+        margin-top:-20px;
+
+    }
+    
+    .vozlaboral-mapa_map-filter-big form > .filter-label.labelFechas .fechas .filter-img{
+        width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .vozlaboral-mapa_map-filter-big form > label .big-numbers {
+        .filter-img{
+            width: 50% !important;
+        }
+        
+        flex-direction: column; /* Cambia a dirección vertical en pantallas pequeñas */
+    }
+    .vozlaboral-mapa_map-filter-big form > label .big-numbers > div:last-child > span {
+        font-size: 1.4rem;
+        
+    }    
+    .vozlaboral-mapa_map-filter-big form > label .big-numbers.fechas img{
+        width: 40% !important;
+        margin-left:30%;
+    }
+    .radio-botones input[type="radio"]{
+        margin:20px auto;        
+    }
+    .divsFechas{
+        font-size: 11px;
+        input{
+            font-size: 10px;
+        }
+        
+    }
+    /*
+    .vozlaboral-mapa_map-filter-big form > label .big-numbers.fechas{
+        width: 30%;
+    }*/
+
+   
+    
 }

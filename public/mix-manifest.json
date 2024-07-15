@@ -4,6 +4,7 @@
     "/assets/js/profile.js": "/assets/js/profile.js?id=9c4f7f3a9aef90e075cbc5fc094f61bf",
     "/assets/js/custom/custom.js": "/assets/js/custom/custom.js?id=299f67bd856165c2e00a07e6615c0502",
     "/assets/js/custom/custom-datatable.js": "/assets/js/custom/custom-datatable.js?id=b70218e56890553a5f23d0373c297690",
+    "/css/styles.css": "/css/styles.css?id=c16e2a71492195527a85ee0cf7334768",
     "/css/app.css": "/css/app.css?id=eebea4f8d30e994242692bbf180e4f5d",
     "/css/all.css": "/css/all.css?id=b355bf76ca079ed52922274879e0fb50",
     "/assets/css/bootstrap.min.css": "/assets/css/bootstrap.min.css?id=a4b3f509e79c54a512b890d73235ef04",
@@ -53,6 +54,5 @@
     "/assets/js/jquery.dataTables.min.js": "/assets/js/jquery.dataTables.min.js?id=debcfe6e23c7ae8352aa741146aabbb4",
     "/assets/js/select2.min.js": "/assets/js/select2.min.js?id=bde23f0b50c81e4c4aa02f8a33f5976d",
     "/assets/js/sweetalert.min.js": "/assets/js/sweetalert.min.js?id=c55e2f3f7d3cd31ddd9aaf26911f1870",
-    "/assets/js/iziToast.min.js": "/assets/js/iziToast.min.js?id=8c0c6d8a29afd0e5b5be3305a0a1c3a5",
-    "/css/styles.css": "/css/styles.css?id=6303725a4517c9e96cea7f5503a699b1"
+    "/assets/js/iziToast.min.js": "/assets/js/iziToast.min.js?id=8c0c6d8a29afd0e5b5be3305a0a1c3a5"
 }
