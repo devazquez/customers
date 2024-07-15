@@ -210,8 +210,8 @@
                 <div class="col-md-1 px-0">
                     <img src="{{ asset('img/share.png') }}" class="img "/>
                 </div>
-                <div class="col-md-1 px-0">
-                    <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
+                <div  id="pdfbtn" class="col-md-1 px-0">
+                   
                 </div>
             </div>
         </div>
@@ -442,6 +442,7 @@
                             const modal = new bootstrap.Modal(document.getElementById('markerModal'));
                             const modalContent = document.getElementById('modalContent');
                             const modalHeader = document.getElementById('modal-header');
+                            const pdfbtn = document.getElementById('pdfbtn');
                             
                             // Set the modal content using the ccl data
                             modalHeader.innerHTML = `  
@@ -453,8 +454,7 @@
                                     <h4>${ccl.municipio}, ${ccl.estado} / ${ccl.estado} ${ccl.fecha_estatus} </h4>
                                 </div>
                             `;
-                            modalContent.innerHTML = `                            
-                                
+                            modalContent.innerHTML = `                                                            
                                 <div class="content info">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -492,6 +492,12 @@
                                     </div>
                                 </div>
                             `;
+                            pdfbtn.innerHTML= `
+                                <a href="/generar-pdf/${ccl.id}" >
+                                    <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
+                                </a>
+                            `;
+
                             modal.show();
                         });                                 
                     }                       
@@ -586,7 +592,7 @@
                         const modal = new bootstrap.Modal(document.getElementById('markerModal'));
                         const modalContent = document.getElementById('modalContent');
                         const modalHeader = document.getElementById('modal-header');
-                            
+                        const pdfbtn = document.getElementById('pdfbtn');    
                         // Set the modal content using the ccl data
                         modalHeader.innerHTML = `  
                             <div class="content title">
@@ -634,6 +640,11 @@
                                 </div>
                             </div>
                         `;
+                        pdfbtn.innerHTML= `
+                                <a href="/generar-pdf/${ccl.id}" >
+                                    <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
+                                </a>
+                            `;
                         modal.show();
                     });                 
                 } 
