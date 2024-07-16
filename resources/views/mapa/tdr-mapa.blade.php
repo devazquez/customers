@@ -210,6 +210,9 @@
                 <div class="col-md-1 px-0">
                     <img src="{{ asset('img/share.png') }}" class="img "/>
                 </div>
+                <div id="whatsbtn" class="col-md-1 px-0">
+                    <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
+                </div>
                 <div  id="pdfbtn" class="col-md-1 px-0">
                    
                 </div>
@@ -444,6 +447,7 @@
                             const modalHeader = document.getElementById('modal-header');
                             const pdfbtn = document.getElementById('pdfbtn');
                             const mailtobtn = document.getElementById('mailtobtn');   
+                            const whatsbtn = document.getElementById('whatsbtn');   
                             
                             // Set the modal content using the ccl data
                             modalHeader.innerHTML = `  
@@ -498,8 +502,12 @@
                                     <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
                                 </a>
                             `;
+                            whatsbtn.innerHTML =`
+                            <a href="https://wa.me/?text=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                                <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
+                            </a>`;
                             mailtobtn.innerHTML =`
-                            <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttp://52.179.132.1/generar-pdf/${ccl.id}">
+                            <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttps://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
                                 <img src="{{ asset('img/mail.png') }}" class="img"/> 
                             </a>`;
                             modal.show();
@@ -598,6 +606,7 @@
                         const modalHeader = document.getElementById('modal-header');
                         const pdfbtn = document.getElementById('pdfbtn');   
                         const mailtobtn = document.getElementById('mailtobtn');   
+                        const whatsbtn = document.getElementById('whatsbtn');   
                         
                         // Set the modal content using the ccl data
                         modalHeader.innerHTML = `  
@@ -651,8 +660,12 @@
                                     <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
                                 </a>
                             `;
+                        whatsbtn.innerHTML =`
+                        <a href="https://wa.me/?text=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                             <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
+                        </a>`;
                         mailtobtn.innerHTML =`
-                            <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttp://52.179.132.1/generar-pdf/${ccl.id}">
+                            <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttps://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
                                 <img src="{{ asset('img/mail.png') }}" class="img"/> 
                             </a>`;
                         modal.show();
