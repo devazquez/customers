@@ -204,16 +204,16 @@
                     <img class="navbar-brand-full app-header-logo" src="{{ asset('img/logomapa.svg') }}" width="190" alt="mapa">
                 </div>
                 
-                <div id ="mailtobtn" class="col-md-1 px-0" style="margin-left: auto;">
+                <div id ="mailtobtn" class="col-md-1 col-3 px-0" style="margin-left: auto;">
                     
                 </div>
-                <div class="col-md-1 px-0">
+                <div class="col-md-1 col-3 px-0">
                     <img src="{{ asset('img/share.png') }}" class="img "/>
                 </div>
-                <div id="whatsbtn" class="col-md-1 px-0">
+                <div id="whatsbtn" class="col-md-1 col-3 px-0">
                     <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
                 </div>
-                <div  id="pdfbtn" class="col-md-1 px-0">
+                <div  id="pdfbtn" class="col-md-1 col-3 px-0">
                    
                 </div>
             </div>
