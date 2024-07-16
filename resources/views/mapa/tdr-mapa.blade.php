@@ -110,7 +110,7 @@
                         </div>
                         <div class="filter-texto">
                             <span id="valActivos">{{ $cclsUbicaciones->where("estatus", "Activo")->count() }}</span>
-                            <h5>Activos</h5>                            
+                            <h5>Paneles activos</h5>                            
                         </div>
                     </div>
                     <div class="radio-botones">

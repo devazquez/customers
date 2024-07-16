@@ -600,7 +600,7 @@ Estilos sobre misViajesIda
     //padding-left: 30px;
     padding-left: 5px;
     padding-right: 5px;
-    padding-top: 70px;
+    padding-top: 0px;
 }
 
 .appPublic .navbar {
@@ -1287,7 +1287,7 @@ Modal
 
 .vozlaboral-mapa_map-filter-big form > label .big-numbers > div:last-child > h5 {
     font-weight: bold;
-    font-size: .7em;
+    font-size: 1em;
 }
 .vozlaboral-mapa_map-filter-big form > label input[type="radio"] {
     width: 20px;
@@ -1531,6 +1531,9 @@ estilos fichas
         width: 30%;
     }*/
 
-   
+    .vozlaboral-mapa_map-filter-big form > label .big-numbers > div:last-child > h5 {
+        font-weight: bold;
+        font-size: 0.7em;
+    }
     
 }
