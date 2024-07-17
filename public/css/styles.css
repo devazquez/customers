@@ -1371,6 +1371,10 @@ Modificaciones a los dots de la cabecera
 .divsFechas {
   margin: 10px auto;
 }
+.divsFechas div span {
+  position: absolute;
+  left: 5px;
+}
 
 .vozlaboral-mapa_map-filter-big form > label input:checked + .radio-class::after {
   left: 30px;
@@ -1605,10 +1609,27 @@ estilos fichas
     margin-right: 15px;
   }
   .containerFiltros .card-footer {
+    width: 50%;
+    position: absolute;
     overflow: auto;
     display: block;
     height: 55px;
-    margin-top: -35px;
+    padding: 0;
+    right: -10px;
+    background-color: transparent;
+    border: 0;
+  }
+  .containerFiltros .card-footer .radio-botones {
+    margin-left: 20px;
+  }
+  .containerFiltros .card-footer .divsFechas {
+    margin: 0;
+  }
+  .containerFiltros .card-footer .divsFechas input {
+    margin-left: 30px;
+  }
+  .containerFiltros .card-footer.ffechas {
+    margin-top: -45px;
   }
 }
 .pantallasGrandes .card {

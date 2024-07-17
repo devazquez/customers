@@ -267,11 +267,12 @@
                             <div class="card-footer">
                                 <div class="divsFechas">
                                     <div> 
+                                        <span>de:</span>
+                                        <input  type="date" id="filter_type-fecha" name="date" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}"  max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus }}">                                        
                                         
-                                        <input  type="date" id="filter_type-fecha" name="date" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}"  max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus }}"> 
                                     </div>
                                     <div class="mt-2" > 
-                                        
+                                        <span>a:</span>
                                         <input  type="date"  id="filter_type-fecha2" name="date2" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}" max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}">                           
                                     </div>
                                 </div>
@@ -373,13 +374,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer ffechas">
                                     <div class="divsFechas">
                                         <div> 
                                             <span >  De: </span>
                                             <input  type="date" id="filter_type-fecha" name="date" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}"  max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus }}"> 
                                         </div>
-                                        <div class="mt-2" > 
+                                        <div class="mt-lg-2 mt-md-2 mt-1" > 
                                             <span class="pl-2 ml-1"> a: </span>
                                             <input  type="date"  id="filter_type-fecha2" name="date2" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}" max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}">                           
                                         </div>
