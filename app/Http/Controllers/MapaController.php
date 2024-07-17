@@ -182,7 +182,7 @@ class MapaController extends Controller
             'isPhpEnabled' => true
         ]);    
         
-        return $pdf->download('descargar.pdf');
+        return $pdf->download('Caso_MLRR.pdf');
         return view('mapa.cardPdf', compact('data'));
         //$pdf = PDF::loadView('mapa.cardPdf', compact('data')); // 'tu_vista_blade' es el nombre de tu vista
         //return $pdf->download('documento.pdf'); // Descargar el PDF
