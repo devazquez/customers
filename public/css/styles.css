@@ -1477,6 +1477,12 @@ estilos fichas
   height: 50px;
 }
 
+#xbtn .img {
+  margin: 5px 5px;
+  width: 40px;
+  height: 40px;
+}
+
 @media (min-width: 576px) {
   .modal-dialog {
     width: 650px;

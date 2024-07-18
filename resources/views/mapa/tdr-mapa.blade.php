@@ -440,7 +440,7 @@
                 <div id ="mailtobtn" class="col-md-1 col-3 px-0" style="margin-left: auto;">
                     
                 </div>
-                <div class="col-md-1 col-3 px-0">
+                <div id="xbtn"  class="col-md-1 col-3 px-0">
                     <img src="{{ asset('img/share.png') }}" class="img "/>
                 </div>
                 <div id="facebtn" class="col-md-1 col-3 px-0">
@@ -707,7 +707,8 @@
                             const pdfbtn = document.getElementById('pdfbtn');
                             const mailtobtn = document.getElementById('mailtobtn');   
                             const whatsbtn = document.getElementById('whatsbtn');
-                            const facebtn = document.getElementById('facebtn');   
+                            const facebtn = document.getElementById('facebtn');
+                            const xbtn = document.getElementById('xbtn');
                             
                             // Set the modal content using the ccl data
                             modalHeader.innerHTML = `  
@@ -762,8 +763,12 @@
                                     <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
                                 </a>
                             `;
+                            xbtn.innerHTML =`
+                            <a href="https://twitter.com/intent/tweet?text=Mira%20este%20caso%20del%20MLRR&url=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                                <img src="{{ asset('img/xlogo.png') }}" width="40px" height="40px" class="img "/>
+                            </a>`;
                             facebtn.innerHTML =`
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                            <a href="http://www.facebook.com/sharer.php?u=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
                                 <img src="{{ asset('img/face.png') }}" class="img "/>
                             </a>`;
                             whatsbtn.innerHTML =`
@@ -872,6 +877,7 @@
                         const mailtobtn = document.getElementById('mailtobtn');   
                         const whatsbtn = document.getElementById('whatsbtn');   
                         const facebtn = document.getElementById('facebtn');
+                        const xbtn = document.getElementById('xbtn');
                         
                         // Set the modal content using the ccl data
                         modalHeader.innerHTML = `  
@@ -925,8 +931,12 @@
                                     <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
                                 </a>
                             `;
+                        xbtn.innerHTML =`
+                        <a href="https://twitter.com/intent/tweet?text=Mira%20este%20caso%20del%20MLRR&url=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                            <img src="{{ asset('img/xlogo.png') }}" width="40px" height="40px" class="img "/>
+                        </a>`;
                         facebtn.innerHTML =`
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                        <a href="http://www.facebook.com/sharer.php?u=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
                             <img src="{{ asset('img/face.png') }}" class="img "/>
                         </a>`;
                         whatsbtn.innerHTML =`
