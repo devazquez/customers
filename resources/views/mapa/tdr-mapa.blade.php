@@ -180,7 +180,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-filter-img">
-                                        <img decoding="async"   src="{{ asset('img/casos-presentados-icon.svg') }}" alt="">
+                                        <img src="{{ asset('img/casos-presentados-icon.svg') }}" alt="">
                                     </div>
                                     <div class="filter-texto">
                                         <span id="valPresentados">{{ count($cclsUbicaciones) }}</span>
@@ -200,7 +200,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-filter-img">
-                                        <img decoding="async"   src="{{ asset('img/casos-activos-icon.svg') }}" alt="">
+                                        <img src="{{ asset('img/casos-activos-icon.svg') }}" alt="">
                                     </div>
                                     <div class="filter-texto">
                                         <span id="valActivos">{{ $cclsUbicaciones->where("estatus", "Activo")->count() }}</span>
@@ -219,7 +219,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-filter-img">    
-                                        <img decoding="async"   src="{{ asset('img/casos-cerrados-icon.svg') }}" alt="">
+                                        <img src="{{ asset('img/casos-cerrados-icon.svg') }}" alt="">
                                     </div>
                                     <div class="filter-texto">
                                         <span id="valCerrados">{{ $cclsUbicaciones->where("estatus", "Cerrado")->count() }}</span>
@@ -238,7 +238,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-filter-img">
-                                        <img decoding="async"  src="{{ asset('img/casos-paneles-icon.svg') }}" alt="">
+                                        <img src="{{ asset('img/casos-paneles-icon.svg') }}" alt="">
                                     </div>
                                     <div class="filter-texto">
                                         <span id="valPaneles">{{ $cclsUbicaciones->where("estatus", "Panel")->count() }}</span>
@@ -257,7 +257,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-filter-img">
-                                        <img decoding="async"   src="{{ asset('img/icon-date.svg') }}" alt="">
+                                        <img src="{{ asset('img/icon-date.svg') }}" alt="">
                                     </div>
                                     <div class="filter-texto">
                                         <h5>Por Fecha</h5>                            
@@ -286,7 +286,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-filter-img">
-                                            <img decoding="async"   src="{{ asset('img/casos-presentados-icon.svg') }}" alt="">
+                                            <img src="{{ asset('img/casos-presentados-icon.svg') }}" alt="">
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valPresentados">{{ count($cclsUbicaciones) }}</span>
@@ -306,7 +306,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-filter-img">
-                                            <img decoding="async"   src="{{ asset('img/casos-activos-icon.svg') }}" alt="">
+                                            <img src="{{ asset('img/casos-activos-icon.svg') }}" alt="">
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valActivos">{{ $cclsUbicaciones->where("estatus", "Activo")->count() }}</span>
@@ -327,7 +327,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-filter-img">    
-                                            <img decoding="async"   src="{{ asset('img/casos-cerrados-icon.svg') }}" alt="">
+                                            <img src="{{ asset('img/casos-cerrados-icon.svg') }}" alt="">
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valCerrados">{{ $cclsUbicaciones->where("estatus", "Cerrado")->count() }}</span>
@@ -346,7 +346,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-filter-img">
-                                            <img decoding="async"  src="{{ asset('img/casos-paneles-icon.svg') }}" alt="">
+                                            <img src="{{ asset('img/casos-paneles-icon.svg') }}" alt="">
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valPaneles">{{ $cclsUbicaciones->where("estatus", "Panel")->count() }}</span>
@@ -367,7 +367,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-filter-img">
-                                            <img decoding="async"   src="{{ asset('img/icon-date.svg') }}" alt="">
+                                            <img src="{{ asset('img/icon-date.svg') }}" alt="">
                                         </div>
                                         <div class="filter-texto">
                                             <h5>Por Fecha</h5>                            
