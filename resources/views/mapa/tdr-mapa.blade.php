@@ -173,14 +173,16 @@
             </form>-->
 
             <!-- -->
+            
             <div class="containerFiltros vozlaboral-mapa_map-filter-big">
-                <!-- div para pantalla grandes -->
+                
                 <div class="filter-grid  pantallasGrandes row row-cols-1 row-cols-md-5"> 
                     <div class="col ">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-filter-img">
-                                        <img src="{{ asset('img/casos-presentados-icon.svg') }}" alt="">
+                                        <!-- <img decoding="async" src="{{ asset('img/casos-presentados-icon.svg') }}" alt="">-->
+                                        <img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-presentados-icon.svg" alt="">
                                     </div>
                                     <div class="filter-texto">
                                         <span id="valPresentados">{{ count($cclsUbicaciones) }}</span>
@@ -200,7 +202,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-filter-img">
-                                        <img src="{{ asset('img/casos-activos-icon.svg') }}" alt="">
+                                        <!-- <img decoding="async" src="{{ asset('img/casos-activos-icon.svg') }}" alt="">-->
+                                        <img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-activos-icon.svg" alt="">
                                     </div>
                                     <div class="filter-texto">
                                         <span id="valActivos">{{ $cclsUbicaciones->where("estatus", "Activo")->count() }}</span>
@@ -219,7 +222,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-filter-img">    
-                                        <img src="{{ asset('img/casos-cerrados-icon.svg') }}" alt="">
+                                        <!-- <img decoding="async" src="{{ asset('img/casos-cerrados-icon.svg') }}" alt=""> -->
+                                        <img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-cerrados-icon.svg" alt="">
                                     </div>
                                     <div class="filter-texto">
                                         <span id="valCerrados">{{ $cclsUbicaciones->where("estatus", "Cerrado")->count() }}</span>
@@ -238,7 +242,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-filter-img">
-                                        <img src="{{ asset('img/casos-paneles-icon.svg') }}" alt="">
+                                        <!-- <img decoding="async" src="{{ asset('img/casos-paneles-icon.svg') }}" alt=""> -->
+                                        <img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-paneles-icon.svg" alt="">
                                     </div>
                                     <div class="filter-texto">
                                         <span id="valPaneles">{{ $cclsUbicaciones->where("estatus", "Panel")->count() }}</span>
@@ -257,7 +262,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-filter-img">
-                                        <img src="{{ asset('img/icon-date.svg') }}" alt="">
+                                        <!-- <img decoding="async" src="{{ asset('img/icon-date.svg') }}" alt=""> -->
+                                        <img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/icon-date.svg" alt="">
                                     </div>
                                     <div class="filter-texto">
                                         <h5>Por Fecha</h5>                            
@@ -279,6 +285,7 @@
                             </div>
                     </div>                    
                 </div>
+                
                 <!-- se cierra el div que solo se visualiza en pantallas grandes -->
                 <div class="filter-grid pantallasChicas row-cols-md-5"> 
                     <div class="row">
@@ -286,7 +293,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-filter-img">
-                                            <img src="{{ asset('img/casos-presentados-icon.svg') }}" alt="">
+                                            <!-- <img decoding="async" src="{{ asset('img/casos-presentados-icon.svg') }}" alt="">-->
+                                            <img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-presentados-icon.svg" alt="">
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valPresentados">{{ count($cclsUbicaciones) }}</span>
@@ -306,7 +314,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-filter-img">
-                                            <img src="{{ asset('img/casos-activos-icon.svg') }}" alt="">
+                                             <!-- <img decoding="async" src="{{ asset('img/casos-activos-icon.svg') }}" alt="">-->
+                                            <img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-activos-icon.svg" alt="">
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valActivos">{{ $cclsUbicaciones->where("estatus", "Activo")->count() }}</span>
@@ -327,7 +336,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-filter-img">    
-                                            <img src="{{ asset('img/casos-cerrados-icon.svg') }}" alt="">
+                                            <!-- <img decoding="async" src="{{ asset('img/casos-cerrados-icon.svg') }}" alt=""> -->
+                                            <img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-cerrados-icon.svg" alt="">
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valCerrados">{{ $cclsUbicaciones->where("estatus", "Cerrado")->count() }}</span>
@@ -346,7 +356,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-filter-img">
-                                            <img src="{{ asset('img/casos-paneles-icon.svg') }}" alt="">
+                                            <!-- <img decoding="async" src="{{ asset('img/casos-paneles-icon.svg') }}" alt=""> -->
+                                            <img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/casos-paneles-icon.svg" alt="">
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valPaneles">{{ $cclsUbicaciones->where("estatus", "Panel")->count() }}</span>
@@ -367,7 +378,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-filter-img">
-                                            <img src="{{ asset('img/icon-date.svg') }}" alt="">
+                                            <!-- <img decoding="async" src="{{ asset('img/icon-date.svg') }}" alt=""> -->
+                                            <img decoding="async" src="https://dev.vozlaboral.mx/wp-content/themes/divi-child/images/icon-date.svg" alt="">
                                         </div>
                                         <div class="filter-texto">
                                             <h5>Por Fecha</h5>                            
@@ -389,7 +401,7 @@
                         </div>           
                     </div>         
                 </div>
-            </div>
+            </div> 
             <!-- -->
         </div>
             <div class="col-12 mapOpenStreetMap p-0 mt-1 justify-content-center w-100 sticky-top"  >                    
