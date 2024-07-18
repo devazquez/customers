@@ -431,6 +431,9 @@
                 <div class="col-md-1 col-3 px-0">
                     <img src="{{ asset('img/share.png') }}" class="img "/>
                 </div>
+                <div id="facebtn" class="col-md-1 col-3 px-0">
+                    <img src="{{ asset('img/share.png') }}" class="img "/>
+                </div>
                 <div id="whatsbtn" class="col-md-1 col-3 px-0">
                     <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
                 </div>
@@ -599,8 +602,9 @@
                 
                 valPresentados.innerHTML=  contadorFiltro2(daterange1.value, daterange2.value );
                 valActivos.innerHTML= contadorFiltro('Activo',daterange1.value, daterange2.value );
-                valCerrados.innerHTML= contadorFiltro('Cerrado',daterange1.value, daterange2.value );;
-                valPaneles.innerHTML= contadorFiltro('Panel',daterange1.value, daterange2.value );;
+                valCerrados.innerHTML= contadorFiltro('Cerrado',daterange1.value, daterange2.value );
+                valPaneles.innerHTML= contadorFiltro('Panel',daterange1.value, daterange2.value );
+                
 
                 if(activeFilter == "presentados"){
                     mapaInicial( startDate, endDate);
@@ -668,7 +672,8 @@
                             const modalHeader = document.getElementById('modal-header');
                             const pdfbtn = document.getElementById('pdfbtn');
                             const mailtobtn = document.getElementById('mailtobtn');   
-                            const whatsbtn = document.getElementById('whatsbtn');   
+                            const whatsbtn = document.getElementById('whatsbtn');
+                            const facebtn = document.getElementById('facebtn');   
                             
                             // Set the modal content using the ccl data
                             modalHeader.innerHTML = `  
@@ -723,6 +728,10 @@
                                     <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
                                 </a>
                             `;
+                            facebtn.innerHTML =`
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                                <img src="{{ asset('img/face.png') }}" class="img "/>
+                            </a>`;
                             whatsbtn.innerHTML =`
                             <a href="https://wa.me/?text=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
                                 <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
@@ -828,6 +837,7 @@
                         const pdfbtn = document.getElementById('pdfbtn');   
                         const mailtobtn = document.getElementById('mailtobtn');   
                         const whatsbtn = document.getElementById('whatsbtn');   
+                        const facebtn = document.getElementById('facebtn');
                         
                         // Set the modal content using the ccl data
                         modalHeader.innerHTML = `  
@@ -881,6 +891,10 @@
                                     <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
                                 </a>
                             `;
+                        facebtn.innerHTML =`
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                            <img src="{{ asset('img/face.png') }}" class="img "/>
+                        </a>`;
                         whatsbtn.innerHTML =`
                         <a href="https://wa.me/?text=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
                              <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
