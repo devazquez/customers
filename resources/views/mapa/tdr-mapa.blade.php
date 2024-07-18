@@ -3,7 +3,7 @@
 @section('content')
 <span class="uisheet screen-darken"></span>
  
-<section class="der-lab-trabajadores  w-100 p-0 my-3 col col-md-10 col-lg-10 col-12 mx-auto">
+<section class="der-lab-trabajadores  w-100 p-0 my-3 col col-md-12 col-lg-12 col-12 mx-auto">
     <div class="row w-100 p-0 col-12 my-3">
         <div class="list-group" id="result-list">
         </div>
@@ -204,7 +204,7 @@
                                     </div>
                                     <div class="filter-texto">
                                         <span id="valActivos">{{ $cclsUbicaciones->where("estatus", "Activo")->count() }}</span>
-                                        <h5>Paneles activos</h5>                            
+                                        <h5>Casos  activos</h5>                            
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -242,7 +242,7 @@
                                     </div>
                                     <div class="filter-texto">
                                         <span id="valPaneles">{{ $cclsUbicaciones->where("estatus", "Panel")->count() }}</span>
-                                        <h5>Paneles</h5>                            
+                                        <h5>Paneles activos</h5>                            
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -290,7 +290,7 @@
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valPresentados">{{ count($cclsUbicaciones) }}</span>
-                                            <h5>Casos presentados</h5>
+                                            <h5>Casos <br> presentados</h5>
                                         </div>                                                       
                                         
                                     </div>
@@ -310,7 +310,7 @@
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valActivos">{{ $cclsUbicaciones->where("estatus", "Activo")->count() }}</span>
-                                            <h5>Paneles activos</h5>                            
+                                            <h5>Casos <br> activos</h5>                            
                                         </div>
                                     </div>
                                     <div class="card-footer">
@@ -350,7 +350,7 @@
                                         </div>
                                         <div class="filter-texto">
                                             <span id="valPaneles">{{ $cclsUbicaciones->where("estatus", "Panel")->count() }}</span>
-                                            <h5>Paneles</h5>                            
+                                            <h5>Paneles <br> activos</h5>                            
                                         </div>
                                     </div>
                                     <div class="card-footer">

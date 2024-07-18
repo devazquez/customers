@@ -1589,7 +1589,7 @@ estilos fichas
   align-items: center; /* Centra verticalmente */
 }
 .containerFiltros .card-body .card-filter-img img {
-  width: 70px;
+  width: 60px;
 }
 
 @media (max-width: 767.98px) {
@@ -1603,10 +1603,15 @@ estilos fichas
     display: flex; /* Activa Flexbox en el cuerpo de la tarjeta */
     align-items: center; /* Centra verticalmente */
     padding: 0;
+    height: 55px;
   }
   .containerFiltros .card-body .card-filter-img img {
     width: 40px;
-    margin-right: 15px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .containerFiltros .card-body .filter-texto h5 {
+    font-size: 0.9em;
   }
   .containerFiltros .card-footer {
     width: 50%;
@@ -1618,6 +1623,7 @@ estilos fichas
     right: -10px;
     background-color: transparent;
     border: 0;
+    margin-top: -5px;
   }
   .containerFiltros .card-footer .radio-botones {
     margin-left: 20px;
@@ -1629,7 +1635,7 @@ estilos fichas
     margin-left: 30px;
   }
   .containerFiltros .card-footer.ffechas {
-    margin-top: -45px;
+    margin-top: -50px;
   }
 }
 .pantallasGrandes .card {
@@ -1639,9 +1645,12 @@ estilos fichas
   height: 80px;
 }
 .pantallasGrandes .card .card-body .filter-texto {
-  font-size: 1.8em;
+  font-size: 1.5em;
   text-align: center;
   margin-left: 5px;
+}
+.pantallasGrandes .card .card-body .filter-texto h5 {
+  font-size: 0.8em;
 }
 .pantallasGrandes .card .card-footer {
   margin-top: -10px;
@@ -1667,5 +1676,13 @@ estilos fichas
 @media (max-width: 767.98px) {
   .pantallasGrandes {
     display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1022px) {
+  /* Estilos a aplicar entre 768px y 1022px */
+  .pantallasGrandes .card .card-footer {
+    position: absolute;
+    margin-top: -30px;
+    left: 140px;
   }
 }
