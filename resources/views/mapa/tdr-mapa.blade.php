@@ -390,11 +390,11 @@
                                     <div class="divsFechas">
                                         <div> 
                                             <span >  De: </span>
-                                            <input  type="date" id="filter_type-fecha" name="date" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}"  max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus }}"> 
+                                            <input  type="date" id="filter_type-fechapc" name="date" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}"  max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus }}"> 
                                         </div>
                                         <div class="mt-lg-2 mt-md-2 mt-1" > 
                                             <span class="pl-2 ml-1"> a: </span>
-                                            <input  type="date"  id="filter_type-fecha2" name="date2" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}" max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}">                           
+                                            <input  type="date"  id="filter_type-fechapc2" name="date2" min="{{ ($cclsUbicaciones->where('fecha_estatus')->first())->fecha_estatus}}" max="{{ ($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}" value="{{($cclsUbicaciones->where('fecha_estatus')->last())->fecha_estatus}}">                           
                                         </div>
                                     </div>
                                 </div>
@@ -583,6 +583,8 @@
         const filtropaneles = document.getElementById('filter_type-paneles');
         const daterange1 = document.getElementById('filter_type-fecha');
         const daterange2 = document.getElementById('filter_type-fecha2');
+        const daterangepc1 = document.getElementById('filter_type-fechapc');
+        const daterangepc2 = document.getElementById('filter_type-fechapc2');
         
         const valPresentados = document.getElementById('valPresentados');
         const valActivos = document.getElementById('valActivos');
@@ -592,10 +594,12 @@
         //console.log(daterange1.value + " " + daterange2.value);
         var startDate = daterange1.value;
         var endDate = daterange2.value;
-
+        
+        //console.log("fecha inicio "+ startDate + " fecha fin "+ endDate);
         let activeFilter = "presentados"; 
         
         document.addEventListener('change', (event) => {
+            
             if (event.target.matches('input[name="filtro_map"]') && event.target.checked) {
                 activeFilter = event.target.value;
                 //alert(activeFilter + " " + daterange1.value + " " + daterange2.value); 
@@ -608,6 +612,7 @@
                 }       
                         
             }
+            //alert(event.target === daterange1 || event.target === daterange2);
             if (event.target === daterange1 || event.target === daterange2) {
                 startDate = daterange1.value;
                 endDate = daterange2.value;
@@ -616,6 +621,23 @@
                 valActivos.innerHTML= contadorFiltro('Activo',daterange1.value, daterange2.value );
                 valCerrados.innerHTML= contadorFiltro('Cerrado',daterange1.value, daterange2.value );
                 valPaneles.innerHTML= contadorFiltro('Panel',daterange1.value, daterange2.value );
+                
+
+                if(activeFilter == "presentados"){
+                    mapaInicial( startDate, endDate);
+                }else{
+                    mapaInicialFiltro(activeFilter, startDate, endDate);
+                }                    
+            }
+            if (event.target === daterangepc1 || event.target === daterangepc2) {
+                //alert(event.target === daterange1);    
+                startDate = daterangepc1.value;
+                endDate = daterangepc2.value;
+                
+                valPresentados.innerHTML=  contadorFiltro2(daterangepc1.value, daterangepc2.value );
+                valActivos.innerHTML= contadorFiltro('Activo',daterangepc1.value, daterangepc2.value );
+                valCerrados.innerHTML= contadorFiltro('Cerrado',daterangepc1.value, daterangepc2.value );
+                valPaneles.innerHTML= contadorFiltro('Panel',daterangepc1.value, daterangepc2.value );
                 
 
                 if(activeFilter == "presentados"){
