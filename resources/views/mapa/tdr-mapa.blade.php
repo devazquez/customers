@@ -767,7 +767,7 @@
                                 <img src="{{ asset('img/face.png') }}" class="img "/>
                             </a>`;
                             whatsbtn.innerHTML =`
-                            <a href="https://wa.me/?text=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                            <a href="https://api.whatsapp.com/send?text=Mira%20este%20caso%20del%20MLRR%20https%3A%2F%2Fmapavozlaboral.eastus2.cloudapp.azure.com%2Fgenerar-pdf%2F${ccl.id}">
                                 <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
                             </a>`;
                             mailtobtn.innerHTML =`
@@ -930,8 +930,8 @@
                             <img src="{{ asset('img/face.png') }}" class="img "/>
                         </a>`;
                         whatsbtn.innerHTML =`
-                        <a href="https://wa.me/?text=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
-                             <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
+                        <a href="https://api.whatsapp.com/send?text=Mira%20este%20caso%20del%20MLRR%20https%3A%2F%2Fmapavozlaboral.eastus2.cloudapp.azure.com%2Fgenerar-pdf%2F${ccl.id}">
+                                <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
                         </a>`;
                         mailtobtn.innerHTML =`
                             <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttps://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
