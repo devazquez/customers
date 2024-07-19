@@ -421,12 +421,13 @@
 <div class="modal fade" id="markerModal" tabindex="-1" role="dialog" aria-labelledby="markerModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+        <button type="button" class="close right" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
         <div class="modal-header p-0" id="modal-header">
             <!-- <h5 class="modal-title" id="markerModalLabel">Título</h5>-->            
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+            
+        </div>        
         <div class="modal-body" id="modalContent">
             <!-- Se agrega el contenido generado por laravel-->
 

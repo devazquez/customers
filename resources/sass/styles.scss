@@ -1418,6 +1418,14 @@ estilos fichas
     height: 40px;
 }
 
+.modal-dialog .modal-content button.close{
+
+    position: absolute;
+    right: 20px;
+    span{
+        font-size: 30px;
+    }
+}
 @media (min-width: 576px) {
     .modal-dialog {
         width: 650px;
