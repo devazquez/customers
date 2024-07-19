@@ -437,19 +437,19 @@
                     <img class="navbar-brand-full app-header-logo" src="{{ asset('img/logomapa.svg') }}" width="190" alt="mapa">
                 </div>
                 
-                <div id ="mailtobtn" class="col-md-1 col-3 px-0" style="margin-left: auto;">
+                <div id ="mailtobtn" class="col-md-1 col-2 px-0" style="margin-left: auto;">
                     
                 </div>
-                <div id="xbtn"  class="col-md-1 col-3 px-0">
+                <div id="xbtn"  class="col-md-1 col-2 px-0">
                     <img src="{{ asset('img/share.png') }}" class="img "/>
                 </div>
                 <div id="facebtn" class="col-md-1 col-3 px-0">
                     <img src="{{ asset('img/share.png') }}" class="img "/>
                 </div>
-                <div id="whatsbtn" class="col-md-1 col-3 px-0">
+                <div id="whatsbtn" class="col-md-1 col-2 px-0">
                     <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
                 </div>
-                <div  id="pdfbtn" class="col-md-1 col-3 px-0">
+                <div  id="pdfbtn" class="col-md-1 col-2 px-0">
                    
                 </div>
             </div>
@@ -759,24 +759,24 @@
                                 </div>
                             `;
                             pdfbtn.innerHTML= `
-                                <a href="/generar-pdf/${ccl.id}" >
+                                <a href="/generar-pdf/${ccl.id}" target="_blank" >
                                     <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
                                 </a>
                             `;
                             xbtn.innerHTML =`
-                            <a href="https://twitter.com/intent/tweet?text=Mira%20este%20caso%20del%20MLRR&url=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                            <a href="https://twitter.com/intent/tweet?text=Mira%20este%20caso%20del%20MLRR&url=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}" target="_blank">
                                 <img src="{{ asset('img/xlogo.png') }}" width="40px" height="40px" class="img "/>
                             </a>`;
                             facebtn.innerHTML =`
-                            <a href="http://www.facebook.com/sharer.php?u=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                            <a href="http://www.facebook.com/sharer.php?u=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}" target="_blank">
                                 <img src="{{ asset('img/face.png') }}" class="img "/>
                             </a>`;
                             whatsbtn.innerHTML =`
-                            <a href="https://api.whatsapp.com/send?text=Mira%20este%20caso%20del%20MLRR%20https%3A%2F%2Fmapavozlaboral.eastus2.cloudapp.azure.com%2Fgenerar-pdf%2F${ccl.id}">
+                            <a href="https://api.whatsapp.com/send?text=Mira%20este%20caso%20del%20MLRR%20https%3A%2F%2Fmapavozlaboral.eastus2.cloudapp.azure.com%2Fgenerar-pdf%2F${ccl.id}" target="_blank">
                                 <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
                             </a>`;
                             mailtobtn.innerHTML =`
-                            <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttps://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                            <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttps://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}" target="_blank">
                                 <img src="{{ asset('img/mail.png') }}" class="img"/> 
                             </a>`;
                             modal.show();
@@ -927,24 +927,24 @@
                             </div>
                         `;
                         pdfbtn.innerHTML= `
-                                <a href="/generar-pdf/${ccl.id}" >
+                                <a href="/generar-pdf/${ccl.id}" target="_blank">
                                     <img src="{{ asset('img/pdf.jpg') }}" class="img "/>
                                 </a>
                             `;
                         xbtn.innerHTML =`
-                        <a href="https://twitter.com/intent/tweet?text=Mira%20este%20caso%20del%20MLRR&url=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                        <a href="https://twitter.com/intent/tweet?text=Mira%20este%20caso%20del%20MLRR&url=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}" target="_blank">
                             <img src="{{ asset('img/xlogo.png') }}" width="40px" height="40px" class="img "/>
                         </a>`;
                         facebtn.innerHTML =`
-                        <a href="http://www.facebook.com/sharer.php?u=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                        <a href="http://www.facebook.com/sharer.php?u=https://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}" target="_blank">
                             <img src="{{ asset('img/face.png') }}" class="img "/>
                         </a>`;
                         whatsbtn.innerHTML =`
-                        <a href="https://api.whatsapp.com/send?text=Mira%20este%20caso%20del%20MLRR%20https%3A%2F%2Fmapavozlaboral.eastus2.cloudapp.azure.com%2Fgenerar-pdf%2F${ccl.id}">
+                        <a href="https://api.whatsapp.com/send?text=Mira%20este%20caso%20del%20MLRR%20https%3A%2F%2Fmapavozlaboral.eastus2.cloudapp.azure.com%2Fgenerar-pdf%2F${ccl.id}" target="_blank">
                                 <img src="{{ asset('img/whatsapp.png') }}" class="img "/>
                         </a>`;
                         mailtobtn.innerHTML =`
-                            <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttps://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}">
+                            <a href="mailto:?subject=Compartir enlace de descarga&body=Enlace de descarga:%0Ahttps://mapavozlaboral.eastus2.cloudapp.azure.com/generar-pdf/${ccl.id}" target="_blank">
                                 <img src="{{ asset('img/mail.png') }}" class="img"/> 
                             </a>`;
                         modal.show();
