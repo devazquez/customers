@@ -753,7 +753,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h4 style="font-weight:bold">Enlace de Solicitud</h4>
-                                            <a href="${ccl.link_solicitud_ustr}">${ccl.link_solicitud_ustr}</a>
+                                            <a href="${ccl.link_solicitud_ustr}" target="_blank"  >${ccl.link_solicitud_ustr}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -921,7 +921,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h4 style="font-weight:bold">Enlace de Solicitud</h4>
-                                        <a href="${ccl.link_solicitud_ustr}">${ccl.link_solicitud_ustr}</a>
+                                        <a href="${ccl.link_solicitud_ustr}" target="_blank" >${ccl.link_solicitud_ustr}</a>
                                     </div>
                                 </div>
                             </div>
