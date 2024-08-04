@@ -83,8 +83,8 @@ class MapaController extends Controller
      * metodo que muestra el CCL dado  el ambito Federal o Local
      */
     public function   tdrMapa(){       
-        
-        $cclsUbicaciones = \DB::table('general as t1')
+        //cambio de nombre 'general' a 'pdf_general' para conectar la información al modelo creado en Django *Cristian*
+        $cclsUbicaciones = \DB::table('pdf_general as t1')
             ->select('t1.id', 't1.empresa', 't1.latitud', 't1.longitud', 't1.municipio', 't1.estado','t1.fecha_estatus', 't1.estatus', 't1.sector', 't1.motivos_ficha', 't1.resultados_ficha', 't1.texto_ficha', 't1.link_solicitud_ustr', 't1.link_resultados_ustr')
             ->get();              
         
@@ -134,8 +134,8 @@ class MapaController extends Controller
         $baseUrl = url('/');
         //dd($baseUrl."/img/logomapa.svg");
         Carbon::setLocale('es');
-        
-        $ccl = \DB::table('general as t1')
+        //cambio de nombre 'general' a 'pdf_general' para conectar la información al modelo creado en Django *Cristian*
+        $ccl = \DB::table('pdf_general as t1')
             ->select('t1.id', 't1.empresa', 't1.latitud', 't1.longitud', 't1.municipio', 't1.estado','t1.fecha_estatus', 't1.estatus', 't1.sector', 't1.motivos_ficha', 't1.resultados_ficha', 't1.texto_ficha', 't1.link_solicitud_ustr', 't1.link_resultados_ustr')
             ->where("t1.id", '=', $id)
             ->get();   
