@@ -11,12 +11,10 @@
             alt="Logo Carpool">
         @endif
 -->
-        <a href="{{ url('/home') }}"></a>
+        
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
-        <a href="{{ url('/home') }}" class="small-sidebar-text">
-            <img class="navbar-brand-full " src="{{ asset('img/logo-reduce-huella.png') }}" width="45px" alt="logo seguimiento huella de carbono"/>
-        </a>
+        
     </div>
     <ul class="sidebar-menu">
         @include('layouts.menu')

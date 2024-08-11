@@ -88,6 +88,16 @@ body{
 .navbar {
     height: 55px;
 }
+.navbar .nav-link{
+    color:#3764a9;
+}
+.navbar .nav-link:hover{
+    color:#3764a9;
+}
+.navbar .active .nav-link {
+    color: #3220b5;
+    font-weight: 700;
+  }
 .navbar-bg {
     background-color: #C2C6CC;
 }
@@ -596,6 +606,10 @@ Estilos sobre misViajesIda
 * appPublic estilo para el template público de viajes compartidos
 */
 
+.appPublic{
+    top: 50px;
+    position: relative;
+}
 .appPublic .main-content {
     //padding-left: 30px;
     padding-left: 5px;
@@ -603,7 +617,7 @@ Estilos sobre misViajesIda
     padding-top: 0px;
 }
 
-.appPublic .navbar {
+.navbar {
     height: 70px;
     left: 0;
 }

@@ -27,25 +27,26 @@
 
 </head>
 <body>
+<div class="main-wrapper">
+    <nav class="navbar navbar-expand-lg main-navbar navbar-right">            
+        <ul class="navbar-nav navbar-right">            
+            <li class="side-menus {{ Request::is('costumers-import')  ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('customers.import') }}">
+                    <span>Importar csv</span>
+                </a>
+            </li>
+            <li class="side-menus {{ Request::is('customers') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('customers.index') }}">
+                    <span>Lista de clientes</span>
+                </a>
+            </li>     
+        </ul>                        
+    </nav>
+</div>
+
 <div id="app" class="appPublic">
     <div class="main-wrapper main-wrapper-1">
-        <!--
-        <div class="navbar-bg"></div>
-        <nav class="navbar navbar-expand-lg main-navbar">
-            <img class="navbar-brand-full app-header-logo" src="{{ asset('img/logomapa.svg') }}" width="170"
-                alt="mapa">
-            <a href="{{ url('/') }}"></a>
-            <form class="form-inline mr-auto" action="#">
-                <ul class="navbar-nav mr-3">
-                    <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"></a></li>
-                </ul>
-            </form>
-            <ul class="navbar-nav navbar-right">            
-                                
-            </ul>     
-                   
-        </nav>
-        -->
+        
         <!-- Main Content -->
         <div class="main-content">
             @yield('content')

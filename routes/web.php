@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MapaController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ImportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +15,23 @@ use App\Http\Controllers\MapaController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
 
 // mapa para identificar el CCL dado el sector, subsector, rama y subrama
-Route::get('/localiza-tu-ccl-info', [MapaController::class, 'localizaTuCCLInfo'])->name('localizatucclinfopublic');
-Route::get('/localiza-tu-ccl', [MapaController::class, 'localizaTuCCL'])->name('localizatucclpublic');
-Route::get('/tdr-mapa', [MapaController::class, 'tdrMapa'])->name('tdr-mapa');
-Route::get('/generar-pdf/{id?}', [MapaController::class, 'generarPDF'])->name('generar-pdf');
+//Route::get('/localiza-tu-ccl-info', [CostumerController::class, 'localizaTuCCLInfo'])->name('localizatucclinfopublic');
 
-Route::get('registrar-pasajero/{dependencia?}',  [App\Http\Controllers\Auth\RegisterUserController::class, 'showRegistrationPasajeroForm'])->name('registrarPasajero');
-Route::post('registrarPasajero', [App\Http\Controllers\Auth\RegisterUserController::class, 'registerPasajero'])->name('registrarPasajeroPost');
+Route::resource('customers', CustomerController::class);
+Route::get('/costumers-import', [ImportController::class, 'show'])->name('customers.import');
+Route::post('/import-csv', [ImportController::class, 'store'])->name('store.csv');
+Route::get('/customers-data/delete-all', [CustomerController::class, 'deleteAll'])->name('customers.delete-all');
+Route::delete('/customers/{customer}', [App\Http\Controllers\CustomerController::class, 'destroy'])->name('customers.destroy');
+Route::get('/customers/{customer}/edit', [App\Http\Controllers\CustomerController::class, 'edit'])->name('customers.edit');
+Route::put('/customers/{customer}', [App\Http\Controllers\CustomerController::class, 'update'])->name('customers.update');  
+
+Route::get('/customers/{customer}', [App\Http\Controllers\CustomerController::class, 'show'])->name('customers.show');
+Route::get('/customers/create', [App\Http\Controllers\CustomerController::class, 'create'])->name('customers.create');
+Route::post('/customers', [App\Http\Controllers\CustomerController::class, 'store'])->name('customers.store');  
+
